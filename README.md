@@ -20,9 +20,20 @@ Then run `/reload-plugins` (or start a new session). `ZS: redact` on the status 
 ```text
 /zscaler-guard            status, counters and active rules
 /zscaler-guard scan       find sensitive values already in the conversation
+/zscaler-guard redact     redact sensitive values (default)
 /zscaler-guard block      refuse prompts that hold sensitive values
 /zscaler-guard off        turn it off
 ```
+
+Type the command at the prompt as is; inside a ``` code fence it is sent as plain text and does not run.
+
+| Mode (status line) | Your prompt holds a sensitive value | Tool output, @file, context |
+|---|---|---|
+| `ZS: redact` (default) | the value is replaced by a tag, the rest is sent | redacted; datasets withheld whole |
+| `ZS: block` | the prompt is not sent; you are told to fix it first | same as redact |
+| `ZS: off` | sent as is | sent as is |
+
+Use `redact` day to day. Use `block` when you want to know every time real data is pasted into a prompt. `off` is for short checks only: a value that enters the conversation while it is off is resent every turn until `/rewind` or `/clear`.
 
 Details, settings (`customRedact`, `customWithhold`, `bulkThreshold`, `withholdMedia`) and the 403 runbook: [zscaler-guard/README.md](zscaler-guard/README.md).
 
