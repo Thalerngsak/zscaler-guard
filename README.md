@@ -32,4 +32,4 @@ Unit tests (`claude plugin test zscaler-guard`) build every test value at run ti
 
 ## Credits
 
-The detection method is adapted from [pdpa-thai](https://github.com/Boom-Vitt/boombignose-mods) by Boom-Vitt (MIT). Licence: [MIT](zscaler-guard/LICENSE).
+The detection method is adapted from [pdpa-thai](https://github.com/Boom-Vitt/boombignose-mods) by Boom-Vitt (MIT). Licence: [MIT](LICENSE); [zscaler-guard/LICENSE](zscaler-guard/LICENSE) also carries pdpa-thai's MIT notice.
