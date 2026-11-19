@@ -1,0 +1,47 @@
+{
+  "name": "zscaler-guard",
+  "version": "0.2.0",
+  "description": "Keeps what corporate DLP (Zscaler) blocks out of what Claude Code sends: redacts cards, national IDs, bank numbers, keys and tokens, withholds whole datasets or restricted content, and recognises the 403 'Internet Security by Zscaler' block. Method adapted from pdpa-thai (boombignose-mods, MIT). Local only; no network calls of its own.",
+  "author": {
+    "name": "Thalerngsak",
+    "url": "https://github.com/Thalerngsak"
+  },
+  "homepage": "https://github.com/Thalerngsak/zscaler-guard",
+  "repository": "https://github.com/Thalerngsak/zscaler-guard",
+  "license": "MIT",
+  "keywords": [
+    "zscaler",
+    "dlp",
+    "redaction",
+    "guardrail",
+    "pdpa",
+    "claude-code"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "bulkThreshold": {
+      "type": "number",
+      "title": "Bulk threshold",
+      "description": "Withhold a whole block (tool output, @file, context) that holds at least this many sensitive values, as a dataset. 0 turns it off.",
+      "default": 25
+    },
+    "withholdMedia": {
+      "type": "boolean",
+      "title": "Withhold images and documents",
+      "description": "Replace image and PDF blocks with a note before sending (for DLP policies that OCR images).",
+      "default": false
+    },
+    "customRedact": {
+      "type": "string",
+      "title": "Extra value patterns to redact",
+      "description": "Regular expressions separated by ;; for values your DLP policy blocks (e.g. contract or customer ID formats). /body/flags keeps flags i m s u.",
+      "default": ""
+    },
+    "customWithhold": {
+      "type": "string",
+      "title": "Restricted-content patterns",
+      "description": "Regular expressions separated by ;; for content that must not be sent at all (e.g. classification labels from your data policy). A matching block is withheld whole, never trimmed.",
+      "default": ""
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "zscaler-guard",
+  "owner": {
+    "name": "Thalerngsak",
+    "url": "https://github.com/Thalerngsak"
+  },
+  "metadata": {
+    "description": "zscaler-guard: keep what Zscaler DLP blocks out of what Claude Code sends"
+  },
+  "plugins": [
+    {
+      "name": "zscaler-guard",
+      "source": "./zscaler-guard",
+      "description": "กันข้อมูลที่ Zscaler DLP บล็อกไม่ให้ถูกส่งให้ Claude: ปกปิดเลขบัตร เลขบัตรประชาชน เลขบัญชี กุญแจ และ token กันชุดข้อมูลไว้ทั้งก้อน และจับ 403 Internet Security by Zscaler พร้อมวิธีกู้ ทำงานในเครื่อง ไม่เรียกเครือข่ายเอง",
+      "version": "0.2.0",
+      "license": "MIT",
+      "category": "security",
+      "keywords": [
+        "zscaler",
+        "dlp",
+        "redaction",
+        "guardrail",
+        "pdpa"
+      ],
+      "homepage": "https://github.com/Thalerngsak/zscaler-guard"
+    }
+  ]
+}
